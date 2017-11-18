@@ -2,26 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeroGenerator : MonoBehaviour {
+public class HeroGenerator : MonoBehaviour
+{
 
     public AllParts Parts;
     public Party TargetParty;
 
-	public void GenerateParty(int heroesCount)
+    public void GenerateParty(int heroesCount)
     {
         if (TargetParty == null)
         {
             Debug.LogError("Target Party is null, fix it ffs.");
         }
         var result = new List<Hero>();
-        for (int i=0;i<heroesCount; i++)
+        for (int i = 0; i < heroesCount; i++)
         {
             var heroClass = Parts.Classes.GetRandomElement();
-            if(heroClass == null)
+            if (heroClass == null)
             {
                 Debug.LogError("Classes are empty ffs...");
             }
             TargetParty.Heroes[i].Class = heroClass;
+            TargetParty.Heroes[i].IsActive = true;
             if (heroClass.name == "Warrior")
                 GenerateHero(Parts.WarriorParts, TargetParty.Heroes[i]);
             else if (!true)

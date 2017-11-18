@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System;
 
-[CreateAssetMenu(menuName ="Hero Maker/Hero", fileName ="Hero")]
-public class Hero : ScriptableObject, IComparable {
-
-    public bool isActive { get; set; }
+[CreateAssetMenu(menuName = "Hero Maker/Hero", fileName = "Hero")]
+public class Hero : ScriptableObject, IComparable
+{
+    [SerializeField]
+    private bool isActive = false;
+    public bool IsActive { get { return isActive; } set { isActive = value; } }
 
 
     public MatchableObject Class;
@@ -42,6 +44,16 @@ public class Hero : ScriptableObject, IComparable {
             result++;
 
         return result;
+    }
+
+    public void Reset()
+    {
+        IsActive = false;
+        Class = null;
+        Head = null;
+        Torso = null;
+        Arms = null;
+        Legs = null;
     }
 
 
