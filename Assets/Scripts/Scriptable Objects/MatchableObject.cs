@@ -8,6 +8,8 @@ public class MatchableObject : ScriptableObject
     private string description;
 
     public Mesh MyModel = null;
+    public Material MyMaterial = null;
+    public string ClassName = "";
 
     public string Description { get { return description; } }
 }

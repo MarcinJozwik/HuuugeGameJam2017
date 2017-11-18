@@ -26,9 +26,21 @@ public class HeroGenerator : MonoBehaviour
             TargetParty.Heroes[i].IsActive = true;
             if (heroClass.name == "Warrior")
                 GenerateHero(Parts.WarriorParts, TargetParty.Heroes[i]);
-            else if (!true)
+            else if (heroClass.name == "Assasin")
             {
-
+                GenerateHero(Parts.AssasinParts, TargetParty.Heroes[i]);
+            }
+            else if (heroClass.name == "Priest")
+            {
+                GenerateHero(Parts.PriestParts, TargetParty.Heroes[i]);
+            }
+            else if (heroClass.name == "Mage")
+            {
+                GenerateHero(Parts.MageParts, TargetParty.Heroes[i]);
+            }
+            else if (heroClass.name == "Archer")
+            {
+                GenerateHero(Parts.ArcherParts, TargetParty.Heroes[i]);
             }
             else
             {
