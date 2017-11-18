@@ -13,4 +13,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Classes:
   - {fileID: 11400000, guid: 7c03079ede2e794409624f811c6fef72, type: 2}
+  - {fileID: 11400000, guid: 00ed75d327266ba45a410185734abd63, type: 2}
+  - {fileID: 11400000, guid: 4f49eef2e74edfc4ca2f165d6e8ad4e3, type: 2}
+  - {fileID: 11400000, guid: 76c6d1ad71727064791f900a3f3a011c, type: 2}
+  - {fileID: 11400000, guid: 641b9ffd0eeb0c64cb7ecffecfc7441e, type: 2}
   WarriorParts: {fileID: 11400000, guid: 618d69036bc255b4b854cec5c04231cb, type: 2}
+  PriestParts: {fileID: 11400000, guid: 0c8197c1c8f732f4681815079f588112, type: 2}
+  AssasinParts: {fileID: 11400000, guid: 5680699de9fc90648be2e443bf93af75, type: 2}
+  ArcherParts: {fileID: 11400000, guid: 5397501ad68bd884ba4aaac93b55857e, type: 2}
+  MageParts: {fileID: 11400000, guid: 76660b21b31fbe44a81964cf6b1b47b6, type: 2}

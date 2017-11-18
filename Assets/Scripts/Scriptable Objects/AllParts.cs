@@ -7,5 +7,9 @@ public class AllParts : ScriptableObject {
 
     public List<MatchableObject> Classes;
     public HeroParts WarriorParts;
+    public HeroParts PriestParts;
+    public HeroParts AssasinParts;
+    public HeroParts ArcherParts;
+    public HeroParts MageParts;
 
 }
