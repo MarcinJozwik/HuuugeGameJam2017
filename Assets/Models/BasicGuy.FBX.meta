@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 634e47ecdbe0d56409f5c1d90e9e2a4b
-timeCreated: 1511040622
+timeCreated: 1511045792
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -8,25 +8,25 @@ ModelImporter:
     100000: Arm
     100002: //RootNode
     100004: Body
-    100006: ChamferBox001
+    100006: Head
     100008: Leg
     400000: Arm
     400002: //RootNode
     400004: Body
-    400006: ChamferBox001
+    400006: Head
     400008: Leg
     2300000: Arm
     2300002: Body
-    2300004: ChamferBox001
+    2300004: Head
     2300006: Leg
     3300000: Arm
     3300002: Body
-    3300004: ChamferBox001
+    3300004: Head
     3300006: Leg
     4300000: Body
     4300002: Arm
     4300004: Leg
-    4300006: ChamferBox001
+    4300006: Head
   externalObjects:
   - first:
       type: UnityEngine:Material

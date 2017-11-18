@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 2ba75fcc0bc42844289dae69035e6254
-timeCreated: 1511045333
+guid: c48e8b5e610332140a4f1ebef0e0dc0a
+timeCreated: 1511045066
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -9,14 +9,14 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Korpus_Napirsnik
+    4300000: Korpus_Chechel
     9500000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Metal
-    second: {fileID: 2100000, guid: f6dd640828095f24f8866dd6ade82e7a, type: 2}
+      name: 08 - Default
+    second: {fileID: 2100000, guid: be75c767e2533774bb0abfd0aacda02f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
