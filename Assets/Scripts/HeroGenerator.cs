@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class HeroGenerator : MonoBehaviour
 {
-
+    public MatchableObject basicObject;
     public AllParts AllParts;
     public Party TargetParty;
+
+
 
     public void GenerateParty(int heroesCount)
     {
@@ -54,57 +56,67 @@ public class HeroGenerator : MonoBehaviour
 
     private void GenerateHero(HeroParts parts, Hero hero)
     {
+        hero.Head = Instantiate(basicObject);
+        hero.Face = Instantiate(basicObject);
+        hero.Torso = Instantiate(basicObject);
         Item notClassic = (Item)Random.Range(0, 3);
         
+
         if(notClassic != Item.Face)
         {
-            hero.Face = parts.Faces.GetRandomElement();
+            hero.Face.MyTexture = parts.Faces.GetRandomElement();
         }
         else
         {
-            var list = new List<MatchableObject>();
+            var list = new List<Texture2D>();
             list.AddRange(AllParts.ArcherParts.Faces);
             list.AddRange(AllParts.AssasinParts.Faces);
             list.AddRange(AllParts.MageParts.Faces);
             list.AddRange(AllParts.PriestParts.Faces);
             list.AddRange(AllParts.WarriorParts.Faces);
 
-            hero.Face = list.GetRandomElement();
+            hero.Face.MyTexture = list.GetRandomElement();
         }
 
         if (notClassic != Item.Torso)
         {
-            hero.Face = parts.Torsos.GetRandomElement();
+            hero.Torso.MyModel = parts.Torsos.GetRandomElement();
         }
         else
         {
-            var list = new List<MatchableObject>();
+            var list = new List<Mesh>();
             list.AddRange(AllParts.ArcherParts.Torsos);
             list.AddRange(AllParts.AssasinParts.Torsos);
             list.AddRange(AllParts.MageParts.Torsos);
             list.AddRange(AllParts.PriestParts.Torsos);
             list.AddRange(AllParts.WarriorParts.Torsos);
 
-            hero.Face = list.GetRandomElement();
+            hero.Torso.MyModel = list.GetRandomElement();
         }
+        hero.Torso.MyMaterial = AllParts.Colors.GetRandomElement();
+
 
         if (notClassic != Item.Head)
         {
-            hero.Face = parts.Heads.GetRandomElement();
+            hero.Head.MyModel = parts.Heads.GetRandomElement();
         }
         else
         {
-            var list = new List<MatchableObject>();
+            var list = new List<Mesh>();
             list.AddRange(AllParts.ArcherParts.Heads);
             list.AddRange(AllParts.AssasinParts.Heads);
             list.AddRange(AllParts.MageParts.Heads);
             list.AddRange(AllParts.PriestParts.Heads);
             list.AddRange(AllParts.WarriorParts.Heads);
 
-            hero.Face = list.GetRandomElement();
+            hero.Head.MyModel = list.GetRandomElement();
         }
+        hero.Head.MyMaterial = AllParts.Colors.GetRandomElement();
+
+        hero.Face.MyTexture = AllParts.Faces.GetRandomElement();
     }
 }
+
 
 enum Item
 {

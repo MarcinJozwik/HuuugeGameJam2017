@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Name: Assasin Parts
   m_EditorClassIdentifier: 
   Heads: []
-  Torsos: []
+  Torsos:
+  - {fileID: 4300000, guid: c48e8b5e610332140a4f1ebef0e0dc0a, type: 3}
   Faces: []

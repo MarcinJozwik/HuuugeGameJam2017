@@ -5,9 +5,8 @@ using UnityEngine;
 public class HeroParts : ScriptableObject
 {
 
-    public List<MatchableObject> Heads;
-    public List<MatchableObject> Torsos;
-    public List<MatchableObject> Faces;
+    public List<Mesh> Heads;
+    public List<Mesh> Torsos;
 
 
 }

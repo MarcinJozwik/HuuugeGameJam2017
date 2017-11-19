@@ -13,4 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyModel: {fileID: 0}
   MyMaterial: {fileID: 0}
-  ClassName: Czasoczarewnik
+  Name: czasoczarewnik
+  MyTexture: {fileID: 0}

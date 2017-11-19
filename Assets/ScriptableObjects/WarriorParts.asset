@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Name: WarriorParts
   m_EditorClassIdentifier: 
   Heads: []
-  Torsos: []
+  Torsos:
+  - {fileID: 0}
   Faces: []

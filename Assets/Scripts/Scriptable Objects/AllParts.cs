@@ -6,6 +6,8 @@ using UnityEngine;
 public class AllParts : ScriptableObject {
 
     public List<MatchableObject> Classes;
+    public List<Material> Colors;
+    public List<Texture2D> Faces;
     public HeroParts WarriorParts;
     public HeroParts PriestParts;
     public HeroParts AssasinParts;

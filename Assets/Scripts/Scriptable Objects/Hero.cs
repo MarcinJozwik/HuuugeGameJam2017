@@ -18,10 +18,13 @@ public class Hero : ScriptableObject, IComparable
     public IEnumerable<string> GetDescription()
     {
         var result = new List<string>();
-        result.Add(Class.Description);
-        result.Add(Head.Description);
-        result.Add(Torso.Description);
-        result.Add(Face.Description);
+        result.Add(Class.Name);
+        if(Head.MyMaterial != null && Head.MyModel != null)
+            result.Add(Head.MyMaterial.name + " " + Head.MyModel.name);
+        if (Torso.MyMaterial != null && Torso.MyModel != null)
+            result.Add(Torso.MyMaterial.name + " " + Torso.MyModel.name);
+        if (Face.MyTexture != null)
+            result.Add(Face.MyTexture.name);
 
         return result;
     }

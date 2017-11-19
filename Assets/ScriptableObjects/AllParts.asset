@@ -17,6 +17,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4f49eef2e74edfc4ca2f165d6e8ad4e3, type: 2}
   - {fileID: 11400000, guid: 76c6d1ad71727064791f900a3f3a011c, type: 2}
   - {fileID: 11400000, guid: 641b9ffd0eeb0c64cb7ecffecfc7441e, type: 2}
+  Colors:
+  - {fileID: 2100000, guid: be75c767e2533774bb0abfd0aacda02f, type: 2}
+  - {fileID: 2100000, guid: 8478ff140791b134cb77613c3131ab6f, type: 2}
+  - {fileID: 2100000, guid: 8fefe47e7af07f7448609f4a71c73dc4, type: 2}
+  - {fileID: 2100000, guid: f6dd640828095f24f8866dd6ade82e7a, type: 2}
+  - {fileID: 2100000, guid: 89c272f8f3f044049a5cb6ef474bbd61, type: 2}
+  Faces:
+  - {fileID: 2800000, guid: 7d32020e63f01214b98cfe1ae61a8091, type: 3}
   WarriorParts: {fileID: 11400000, guid: 618d69036bc255b4b854cec5c04231cb, type: 2}
   PriestParts: {fileID: 11400000, guid: 0c8197c1c8f732f4681815079f588112, type: 2}
   AssasinParts: {fileID: 11400000, guid: 5680699de9fc90648be2e443bf93af75, type: 2}

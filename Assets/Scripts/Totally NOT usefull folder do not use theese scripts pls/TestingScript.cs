@@ -15,7 +15,21 @@ public class TestingScript : MonoBehaviour
         generator = GetComponent<HeroGenerator>();
         generator.GenerateParty(3);
 
-        Debug.Log(WorkingParty.CompareTo(TargetParty));
+
+        foreach (var hero in TargetParty.Heroes)
+        {
+            if (!hero.IsActive)
+                continue;
+            string str = "";
+
+            foreach (var dsc in hero.GetDescription())
+            {
+                str += dsc + " ";
+            }
+
+            Debug.Log(str);
+        }
+        //Debug.Log(WorkingParty.CompareTo(TargetParty));
 
     }
 

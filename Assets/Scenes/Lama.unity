@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b42471d7fe4ed04791ed1b3aa0c3252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  basicObject: {fileID: 11400000, guid: e943b050d255df943b4a523e6e5cc9f0, type: 2}
   AllParts: {fileID: 11400000, guid: 2fe7f2237f4c3b946ab4b4e331e4e461, type: 2}
   TargetParty: {fileID: 11400000, guid: 6afc069c067a7b7478ef59e3f441ee26, type: 2}
 --- !u!114 &198349592
