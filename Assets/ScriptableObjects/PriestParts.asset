@@ -13,7 +13,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Heads:
   - {fileID: 4300000, guid: 0f59830317196a641a4c04ddbadc8825, type: 3}
-  - {fileID: 4300000, guid: 28980a2ee1d4737469adb6c627c0db8d, type: 3}
   Torsos:
   - {fileID: 4300000, guid: 03799cd50736d5644aa4ab006b1c4b31, type: 3}
-  - {fileID: 4300000, guid: def44b3af851ad54c9aef6a19749cb58, type: 3}
+  Names:
+  - jarcybiskup
+  - apotekarz
+  - olejarz
+  - geometer
+  - jardziekon
+  - saletrnik
+  - sufragan
+  - "\u015Bwi\u0119togu\u015Blec"
+  - "\u017Cegnaniec"

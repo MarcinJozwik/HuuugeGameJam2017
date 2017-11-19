@@ -12,6 +12,7 @@ public class DescriptionGenerator
     private readonly List<string> firstWearingVerbs;
     private readonly List<string> baseSecondWearingVerbs;
     private readonly List<string> secondWearingVerbs;
+
     private string firstItem;
     private string secondItem;
 
@@ -46,7 +47,7 @@ public class DescriptionGenerator
         ShuffleItemInDescription();
         firstItem = GetGenderizableString(firstItem);
         secondItem = GetGenderizableString(secondItem);
-        return String.Format("{5}{0} niekto {1} {2}.\n{3} {4}.", CamelString(heroParams[3]), GetRandomFromList(baseFirstWearingVerbs, firstWearingVerbs), firstItem, GetRandomFromList(baseSecondWearingVerbs, secondWearingVerbs), secondItem, intro);
+        return String.Format("{5}{0} {6} {1} {2}. {3} {4}.", CamelString(heroParams[3]), GetRandomFromList(baseFirstWearingVerbs, firstWearingVerbs), firstItem, GetRandomFromList(baseSecondWearingVerbs, secondWearingVerbs), secondItem, intro, heroParams[0]);
     }    
 
     private string GetRandomFromList(List<string> baseList, List<string> currentList)
