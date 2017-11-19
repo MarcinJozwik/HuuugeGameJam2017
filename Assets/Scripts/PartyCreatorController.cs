@@ -45,6 +45,8 @@ namespace Assets.Scripts
 
         private Stage currentStage;
 
+        private bool dupa;
+
         public Stage CurrentStage
         {
             get
@@ -80,11 +82,17 @@ namespace Assets.Scripts
         private void Awake()
         {
             this.descriptionGenerator = new DescriptionGenerator();
-            this.pedestalMats[this.heroIndex].material = this.pedestalActive;
         }
 
         public void Update()
         {
+            if (GameController.Instance.CurrentGameState == GameController.GameState.Intro && !dupa)
+            {
+                this.pedestalMats[this.heroIndex].material = this.pedestalActive;
+                this.dupa = true;
+            }
+
+
             if (GameController.Instance.CurrentGameState != GameController.GameState.CreatingParty)
             {
                 return;   

@@ -26,7 +26,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1028995503540296
 GameObject:
   m_ObjectHideFlags: 1
@@ -89,7 +89,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1198466244585282
 GameObject:
   m_ObjectHideFlags: 1
@@ -337,7 +337,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1576973686370698
 GameObject:
   m_ObjectHideFlags: 1
@@ -584,7 +584,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1936871861573832
 GameObject:
   m_ObjectHideFlags: 1
@@ -2179,15 +2179,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6850dc56a19837d42a0855aeefc921c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Loaders: []
+  Loaders:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   heroGenerator: {fileID: 0}
   heroes:
   - {fileID: 114672724037177018}
   - {fileID: 114882498933454428}
   - {fileID: 114163457731678052}
   - {fileID: 114385262311700636}
+  pedestalMats: []
+  pedestalActive: {fileID: 0}
+  pedestalInactive: {fileID: 0}
   workingParty: {fileID: 11400000, guid: b9da2746c1a81b243835db2f053239c2, type: 2}
   allParts: {fileID: 11400000, guid: 2fe7f2237f4c3b946ab4b4e331e4e461, type: 2}
+  heroDescriptionText: {fileID: 0}
 --- !u!114 &114882498933454428
 MonoBehaviour:
   m_ObjectHideFlags: 1

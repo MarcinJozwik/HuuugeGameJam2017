@@ -1,28 +1,33 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿// // --------------------------------------------------------------------------------------------------------------------
+// // <copyright file="GameController.cs" company="Mr Lizard">
+// //   Copyright @ 2017 Mr Lizard. All rights reserved.
+// // </copyright>
+// // <summary>
+// //   
+// // </summary>
+// // --------------------------------------------------------------------------------------------------------------------
 
 using Assets.Scripts;
 
 using Gamelogic.Extensions;
 
 using UnityEngine;
-using UnityEngine.UI;
 
-using Random = UnityEngine.Random;
-
-public class GameController : Singleton<GameController> {
-
+public class GameController : Singleton<GameController>
+{
     public enum GameState
     {
         InStartScreen,
+
         Intro,
+
         CreatingParty,
+
         CheckingResult,
+
         GameOver
     }
 
-    private GameState currentGameState;
     public GameState CurrentGameState
     {
         get
@@ -35,7 +40,7 @@ public class GameController : Singleton<GameController> {
             this.currentGameState = value;
             //Debug.Log("Changing game state: " + this.currentGameState);
 
-            switch (currentGameState)
+            switch (this.currentGameState)
             {
                 case GameState.Intro:
                     this.GameCanvas.SetActive(true);
@@ -59,9 +64,14 @@ public class GameController : Singleton<GameController> {
         }
     }
 
+    public GameObject RestartCanvas;
+
+    public GameObject GameCanvas;
+
+    private GameState currentGameState;
+
     [SerializeField]
     private HeroGenerator heroGenerator;
-
 
     [SerializeField]
     private Party targetParty;
@@ -78,26 +88,22 @@ public class GameController : Singleton<GameController> {
     [SerializeField]
     private PartyCreatorController partyCreatorController;
 
-    public GameObject RestartCanvas;
-    public GameObject GameCanvas;
+    private float partyTimer;
 
+    private readonly float createPartyTime = 100f;
 
-    private float partyTimer = 0f;
-
-    private float createPartyTime = 100f;
-
-    private int partsPerHero = 4;
+    private readonly int partsPerHero = 4;
 
     // Use this for initialization
-    void Start ()
+    private void Start()
     {
-        CurrentGameState = GameState.InStartScreen;
+        this.CurrentGameState = GameState.InStartScreen;
     }
-    
+
     // Update is called once per frame
-    void Update ()
+    private void Update()
     {
-        switch (CurrentGameState)
+        switch (this.CurrentGameState)
         {
             case GameState.Intro:
                 break;
@@ -118,11 +124,17 @@ public class GameController : Singleton<GameController> {
                 int heroesInParty = this.heroGenerator.TargetParty.Heroes.FindAll(hero => hero.IsActive).Count;
 
                 int wellPlacedParts = this.heroGenerator.TargetParty.CompareTo(this.workingParty);
-                int numberOfTotalParts = heroesInParty * partsPerHero;
+                int numberOfTotalParts = heroesInParty * this.partsPerHero;
                 int wrongPartsNumber = numberOfTotalParts - wellPlacedParts;
                 Debug.Log("Good choices: " + wellPlacedParts + ",Bad choices: " + wrongPartsNumber);
                 this.scoreController.GenerateScore(wellPlacedParts, wrongPartsNumber);
-                this.CurrentGameState = GameState.Intro;
+                if (this.CurrentGameState != GameState.GameOver)
+                {
+                    this.CurrentGameState = GameState.Intro;
+                }
+                break;
+            case GameState.GameOver:
+                    this.partyCreatorController.ResetHeroes();
                 break;
         }
     }
