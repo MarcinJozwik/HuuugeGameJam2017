@@ -45,6 +45,9 @@ namespace Assets.Scripts
 
         private Stage currentStage;
 
+        public AudioSource AudioSource;
+
+        public AudioClip WrongSound;
 
         public Stage CurrentStage
         {
@@ -166,14 +169,36 @@ namespace Assets.Scripts
             switch (CurrentStage)
             {
                 case Stage.Head:
+                    Party targetParty = this.heroGenerator.TargetParty;
+
                     this.workingParty.Heroes[this.heroIndex].Head.MyModel = mesh;
                     this.workingParty.Heroes[this.heroIndex].Head.MyMaterial = material;
+
+                    if (this.workingParty.Heroes[this.heroIndex].Head.MyModel
+                        != targetParty.Heroes[this.heroIndex].Head.MyModel
+                        && this.workingParty.Heroes[this.heroIndex].Head.MyMaterial
+                        != targetParty.Heroes[this.heroIndex].Head.MyMaterial)
+                    {
+                        this.AudioSource.PlayOneShot(this.WrongSound);
+                    }
+
+
                     UpdateHero();
                     this.CurrentStage = Stage.Torso;
                     break;
                 case Stage.Torso:
                     this.workingParty.Heroes[this.heroIndex].Torso.MyModel = mesh;
                     this.workingParty.Heroes[this.heroIndex].Torso.MyMaterial = material;
+
+                    targetParty = this.heroGenerator.TargetParty;
+
+                    if (this.workingParty.Heroes[this.heroIndex].Torso.MyModel
+                        != targetParty.Heroes[this.heroIndex].Torso.MyModel
+                        && this.workingParty.Heroes[this.heroIndex].Torso.MyMaterial
+                        != targetParty.Heroes[this.heroIndex].Torso.MyMaterial)
+                    {
+                        this.AudioSource.PlayOneShot(this.WrongSound);
+                    }
                     UpdateHero();
                     this.CurrentStage = Stage.Class;
                     break;
@@ -181,7 +206,7 @@ namespace Assets.Scripts
 
                     if (this.heroIndex < this.heroes.FindAll(model => model.ParentGameObject.active).Count - 1)
                     {
-                        Party targetParty = this.heroGenerator.TargetParty;
+                        targetParty = this.heroGenerator.TargetParty;
                         this.pedestalMats[this.heroIndex].material = this.pedestalInactive;
                         this.heroIndex++;
                         this.pedestalMats[this.heroIndex].material = this.pedestalActive;

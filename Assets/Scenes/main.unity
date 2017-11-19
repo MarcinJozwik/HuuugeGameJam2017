@@ -2254,6 +2254,16 @@ Prefab:
       propertyPath: pedestalInactive
       value: 
       objectReference: {fileID: 2100000, guid: 58c578f52ba22df41a8ada2c76c61666, type: 2}
+    - target: {fileID: 114690684001274652, guid: a4dca5ecaf5919f49a6e37264b14223b,
+        type: 2}
+      propertyPath: AudioSource
+      value: 
+      objectReference: {fileID: 1793397155}
+    - target: {fileID: 114690684001274652, guid: a4dca5ecaf5919f49a6e37264b14223b,
+        type: 2}
+      propertyPath: WrongSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 71a01533d0f46424f8c30a65373d6fee, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a4dca5ecaf5919f49a6e37264b14223b, type: 2}
   m_IsPrefabParent: 0
