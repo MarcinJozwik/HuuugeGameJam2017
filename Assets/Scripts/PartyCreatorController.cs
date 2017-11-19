@@ -45,7 +45,6 @@ namespace Assets.Scripts
 
         private Stage currentStage;
 
-        private bool dupa;
 
         public Stage CurrentStage
         {
@@ -86,12 +85,10 @@ namespace Assets.Scripts
 
         public void Update()
         {
-            if (GameController.Instance.CurrentGameState == GameController.GameState.Intro && !dupa)
+            if (GameController.Instance.CurrentGameState == GameController.GameState.CreatingParty)
             {
                 this.pedestalMats[this.heroIndex].material = this.pedestalActive;
-                this.dupa = true;
             }
-
 
             if (GameController.Instance.CurrentGameState != GameController.GameState.CreatingParty)
             {
