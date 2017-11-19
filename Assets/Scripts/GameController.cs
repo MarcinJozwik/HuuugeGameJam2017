@@ -95,7 +95,7 @@ public class GameController : Singleton<GameController>
 
     public float partyTimer;
 
-    public readonly float createPartyTime = 100f;
+    public readonly float createPartyTime = 60f;
 
     private readonly int partsPerHero = 4;
 
