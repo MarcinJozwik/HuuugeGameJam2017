@@ -68,7 +68,10 @@ namespace Assets.Scripts
                         this.LoadParts();
                         break;
                     case Stage.Class:
-                        //ReloadUI
+                        foreach (var loader in Loaders)
+                        {
+                            loader.LoadSprites();
+                        }
                         break;
                 }
             }
@@ -102,30 +105,30 @@ namespace Assets.Scripts
             {
                 if (Input.GetKeyDown(KeyCode.Q))
                 {
-                    ChangePart(null, null);
+                    ChangePart(null, null, "Warrior");
                     Debug.Log("User input: Q");
                 }
                 else if (Input.GetKeyDown(KeyCode.W))
                 {
-                    ChangePart(null, null);
+                    ChangePart(null, null, "Archer");
 
                     Debug.Log("User input: W");
                 }
                 else if (Input.GetKeyDown(KeyCode.E))
                 {
-                    ChangePart(null, null);
+                    ChangePart(null, null, "Assasin");
 
                     Debug.Log("User input: E");
                 }
                 else if (Input.GetKeyDown(KeyCode.R))
                 {
-                    ChangePart(null, null);
+                    ChangePart(null, null, "Mage");
 
                     Debug.Log("User input: R");
                 }
                 else if (Input.GetKeyDown(KeyCode.T))
                 {
-                    ChangePart(null, null);
+                    ChangePart(null, null, "Priest");
 
                     Debug.Log("User input: T");
                 }
@@ -135,36 +138,36 @@ namespace Assets.Scripts
 
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                ChangePart(this.Loaders[0].currentModel.mesh, this.Loaders[0].currentModel.material);
+                ChangePart(this.Loaders[0].currentModel.mesh, this.Loaders[0].currentModel.material, null);
                 Debug.Log("User input: Q");
             }
             else if (Input.GetKeyDown(KeyCode.W))
             {
-                ChangePart(this.Loaders[1].currentModel.mesh, this.Loaders[1].currentModel.material);
+                ChangePart(this.Loaders[1].currentModel.mesh, this.Loaders[1].currentModel.material, null);
 
                 Debug.Log("User input: W");
             }
             else if (Input.GetKeyDown(KeyCode.E))
             {
-                ChangePart(this.Loaders[2].currentModel.mesh, this.Loaders[2].currentModel.material);
+                ChangePart(this.Loaders[2].currentModel.mesh, this.Loaders[2].currentModel.material, null);
 
                 Debug.Log("User input: E");
             }
             else if (Input.GetKeyDown(KeyCode.R))
             {
-                ChangePart(this.Loaders[3].currentModel.mesh, this.Loaders[3].currentModel.material);
+                ChangePart(this.Loaders[3].currentModel.mesh, this.Loaders[3].currentModel.material, null);
 
                 Debug.Log("User input: R");
             }
             else if (Input.GetKeyDown(KeyCode.T))
             {
-                ChangePart(this.Loaders[4].currentModel.mesh, this.Loaders[4].currentModel.material);
+                ChangePart(this.Loaders[4].currentModel.mesh, this.Loaders[4].currentModel.material, null);
 
                 Debug.Log("User input: T");
             }
         }
 
-        public void ChangePart(Mesh mesh, Material material)
+        public void ChangePart(Mesh mesh, Material material, string hclass)
         {
             switch (CurrentStage)
             {
@@ -203,7 +206,7 @@ namespace Assets.Scripts
                     this.CurrentStage = Stage.Class;
                     break;
                 case Stage.Class:
-
+                    this.workingParty.Heroes[this.heroIndex].Class.Name = hclass;
                     if (this.heroIndex < this.heroes.FindAll(model => model.ParentGameObject.active).Count - 1)
                     {
                         targetParty = this.heroGenerator.TargetParty;
@@ -304,6 +307,12 @@ namespace Assets.Scripts
                     for (int i = 0; i < 5; i++)
                     {
                         Loaders[i].LoadModel(list[i], false);
+                    }
+                    break;
+                case Stage.Class:
+                    for (int i = 0; i < 5; i++)
+                    {
+                        Loaders[i].LoadSprites();
                     }
                     break;
             }      
