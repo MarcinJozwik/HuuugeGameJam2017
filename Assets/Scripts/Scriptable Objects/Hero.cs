@@ -54,5 +54,21 @@ public class Hero : ScriptableObject, IComparable
         Face = null;
     }
 
+    public Model GetHead()
+    {
+        Model result = new Model();
+        result.material = Head.MyMaterial;
+        result.mesh = Head.MyModel;
+        return result;
+    }
+
+    public Model GetTorso()
+    {
+        Model result = new Model();
+        result.material = Torso.MyMaterial;
+        result.mesh = Torso.MyModel;
+        return result;
+    }
+
 
 }
