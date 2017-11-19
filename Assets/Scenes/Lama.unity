@@ -308,6 +308,7 @@ MonoBehaviour:
   loader: {fileID: 2004923780}
   TargetParty: {fileID: 11400000, guid: 6afc069c067a7b7478ef59e3f441ee26, type: 2}
   WorkingParty: {fileID: 11400000, guid: b9da2746c1a81b243835db2f053239c2, type: 2}
+  spawnedHeroes: 3
 --- !u!4 &198349593
 Transform:
   m_ObjectHideFlags: 0
