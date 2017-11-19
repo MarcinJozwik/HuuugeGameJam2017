@@ -33,13 +33,13 @@ public class Hero : ScriptableObject, IComparable
     {
         Hero otherHero = obj as Hero;
         int result = 0;
-        if (otherHero.Class == Class)
+        if (otherHero.Class.Name == Class.Name)
             result++;
-        if (otherHero.Head == Head)
+        if (otherHero.Head.MyMaterial == Head.MyMaterial && otherHero.Head.MyModel == Head.MyModel)
             result++;
-        if (otherHero.Torso == Torso)
+        if (otherHero.Torso.MyModel == Torso.MyModel && otherHero.Torso.MyMaterial == Torso.MyMaterial)
             result++;
-        if (otherHero.Face == Face)
+        if (otherHero.Face.MyTexture == Face.MyTexture)
             result++;
 
         return result;
@@ -48,10 +48,20 @@ public class Hero : ScriptableObject, IComparable
     public void Reset()
     {
         IsActive = false;
-        Class = null;
-        Head = null;
-        Torso = null;
-        Face = null;
+        if(Class != null)
+            Class.Name = "";
+        if (Head != null)
+        {
+            Head.MyModel = null;
+            Head.MyMaterial = null;
+        }
+        if (Torso != null)
+        {
+            Torso.MyModel = null;
+            Torso.MyMaterial = null;
+        }
+        if (Face != null)
+            Face.MyTexture = null;
     }
 
     public Model GetHead()

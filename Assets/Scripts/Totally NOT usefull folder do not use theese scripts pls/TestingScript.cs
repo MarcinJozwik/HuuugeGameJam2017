@@ -73,7 +73,7 @@ public class TestingScript : MonoBehaviour
         list.Shuffle();
         for (int i = 0; i < 5; i++)
         {
-            Loaders[i].LoadModel(list[i]);
+            Loaders[i].LoadModel(list[i], false);
         }
     }
 

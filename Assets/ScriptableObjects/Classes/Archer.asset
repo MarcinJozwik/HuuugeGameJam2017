@@ -13,5 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyModel: {fileID: 0}
   MyMaterial: {fileID: 0}
-  Name: "\u0142owiec"
+  Name: Archer
   MyTexture: {fileID: 0}
