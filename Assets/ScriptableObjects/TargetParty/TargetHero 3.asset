@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0637c45c7ce57b0458aa9e76c3ac64bd, type: 3}
   m_Name: TargetHero 3
   m_EditorClassIdentifier: 
-  Class: {fileID: 0}
-  Head: {fileID: 0}
-  Torso: {fileID: 0}
-  Arms: {fileID: 0}
-  Legs: {fileID: 0}
+  isActive: 0
+  Class: {fileID: 11400000, guid: 8498910ac2373bc46b9ede9e1f8ce9bc, type: 2}
+  Head: {fileID: 11400000, guid: ae89f912bf43ef247b41638a9054877d, type: 2}
+  Torso: {fileID: 11400000, guid: dad960968cba7164492e707915e7ea50, type: 2}
+  Face: {fileID: 11400000, guid: dc189604107ee264e9ce290157d0760f, type: 2}

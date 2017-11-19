@@ -32,20 +32,13 @@ public class GameController : Singleton<GameController> {
         set
         {
             this.currentGameState = value;
-            Debug.Log("Changing game state: " + this.currentGameState);
+            //Debug.Log("Changing game state: " + this.currentGameState);
 
             switch (currentGameState)
             {
                 case GameState.Intro:
                     this.workingParty.Reset();
                     this.targetParty.Reset();
-                    for (int i = 0; i < this.workingParty.Heroes.Count; i++)
-                    {
-                        Hero hero = this.workingParty.Heroes[i];
-                        hero.Head = ScriptableObject.Instantiate<MatchableObject>(basicObject);
-                        hero.Face = ScriptableObject.Instantiate<MatchableObject>(basicObject);
-                        hero.Torso = ScriptableObject.Instantiate<MatchableObject>(basicObject);
-                    }
                     this.heroGenerator.GenerateParty(Random.Range(1, 5));
                     this.partyCreatorController.ResetHeroes();
                     this.partyCreatorController.PrepareHeroes();
