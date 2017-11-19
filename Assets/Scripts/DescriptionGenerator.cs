@@ -44,6 +44,8 @@ public class DescriptionGenerator
         heroParams = hero.GetDescription().ToList();
         string intro = "Mistrzu, w potrzebiźnie przyjacham!\nPotrzebna grumada:\n";
         ShuffleItemInDescription();
+        firstItem = GetGenderizableString(firstItem);
+        secondItem = GetGenderizableString(secondItem);
         return String.Format("{5}{0} niekto {1} {2}. {3} {4}.", CamelString(heroParams[3]), GetRandomFromList(baseFirstWearingVerbs, firstWearingVerbs), firstItem, GetRandomFromList(baseSecondWearingVerbs, secondWearingVerbs), secondItem, intro);
     }    
 
@@ -64,6 +66,23 @@ public class DescriptionGenerator
     private string CamelString(string heroParam)
     {
         return String.Format("{0}{1}", heroParam.Substring(0, 1).ToUpper(), heroParam.Substring(1));
+    }
+
+    private string GetGenderizableString(string item)
+    {
+        if (item.EndsWith("a"))
+        {
+            int index = item.IndexOf(" ") - 1;
+            item = item.Remove(index, 1);
+            item = item.Insert(index, "a");
+        }
+        else if (item.EndsWith("o"))
+        {
+            int index = item.IndexOf(" ") - 1;
+            item = item.Remove(index, 1);
+            item = item.Insert(index, "e");
+        }
+        return item;
     }
 
     private void ShuffleItemInDescription()
