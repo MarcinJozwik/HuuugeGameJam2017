@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Gamelogic.Extensions.Algorithms;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -13,11 +14,15 @@ public class DescriptionGenerator
     private readonly List<string> baseSecondWearingVerbs;
     private readonly List<string> secondWearingVerbs;
 
+    private readonly List<string> epithetNames;
+    private readonly List<string> baseEpithetNames;
+
     private string firstItem;
     private string secondItem;
 
     public DescriptionGenerator()
     {
+        epithetNames = new List<string>();
         firstWearingVerbs = new List<string>();
         secondWearingVerbs = new List<string>();
         baseFirstWearingVerbs = new List<string>()
@@ -38,6 +43,22 @@ public class DescriptionGenerator
             "Warte wględowania się jest też",
             "Niech wdirży twoją uwagę lepaknię",
         };
+        baseEpithetNames = new List<string>()
+        {
+            "marcielny",
+            "mężczyński",
+            "mistrowny",
+            "potwarczy",
+            "przeszarzedny",
+            "przezeczciwy",
+            "puścieły",
+            "kruty",
+            "kluzki",
+            "kłokietliwy",
+            "klecawy",
+            "juczny",
+            "błogosławieny"
+        };
     }
 
     public string GetDescription(Hero hero)
@@ -47,7 +68,7 @@ public class DescriptionGenerator
         ShuffleItemInDescription();
         firstItem = GetGenderizableString(firstItem);
         secondItem = GetGenderizableString(secondItem);
-        return String.Format("{5}{0} {6} {1} {2}.\n{3} {4}.", CamelString(heroParams[3]), GetRandomFromList(baseFirstWearingVerbs, firstWearingVerbs), firstItem, GetRandomFromList(baseSecondWearingVerbs, secondWearingVerbs), secondItem, intro, heroParams[0]);
+        return String.Format("{5}{0} {6} {1} {2}.\n{3} {4}.", CamelString(GetRandomFromList(baseEpithetNames, epithetNames)), GetRandomFromList(baseFirstWearingVerbs, firstWearingVerbs), firstItem, GetRandomFromList(baseSecondWearingVerbs, secondWearingVerbs), secondItem, intro, heroParams[0]);
     }    
 
     private string GetRandomFromList(List<string> baseList, List<string> currentList)
