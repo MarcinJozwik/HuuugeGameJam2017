@@ -60,9 +60,6 @@ public class GameController : Singleton<GameController> {
     private Text heroDescriptionText;
 
     [SerializeField]
-    private Party targetParty;
-
-    [SerializeField]
     private Party workingParty;
 
     [SerializeField]
@@ -101,9 +98,9 @@ public class GameController : Singleton<GameController> {
 
                 break;
             case GameState.CheckingResult:
-                int heroesInParty = this.targetParty.Heroes.FindAll(hero => hero.IsActive).Count;
+                int heroesInParty = this.heroGenerator.TargetParty.Heroes.FindAll(hero => hero.IsActive).Count;
 
-                int wellPlacedParts = this.targetParty.CompareTo(this.workingParty);
+                int wellPlacedParts = this.heroGenerator.TargetParty.CompareTo(this.workingParty);
                 int numberOfTotalParts = heroesInParty * partsPerHero;
                 int wrongPartsNumber = numberOfTotalParts - wellPlacedParts;
                 this.scoreController.GenerateScore(wellPlacedParts, wrongPartsNumber);
