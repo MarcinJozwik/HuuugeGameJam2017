@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: c48e8b5e610332140a4f1ebef0e0dc0a
-timeCreated: 1511045066
+timeCreated: 1511061282
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -10,13 +10,12 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Korpus_Chechel
-    9500000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 08 - Default
-    second: {fileID: 2100000, guid: be75c767e2533774bb0abfd0aacda02f, type: 2}
+    second: {fileID: 2100000, guid: 3215be363e0d94c488f0f91da2652b7a, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -88,7 +87,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

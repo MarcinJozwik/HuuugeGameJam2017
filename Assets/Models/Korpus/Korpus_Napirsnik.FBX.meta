@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 2ba75fcc0bc42844289dae69035e6254
-timeCreated: 1511045333
+timeCreated: 1511061282
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -10,13 +10,12 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Korpus_Napirsnik
-    9500000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Metal
-    second: {fileID: 2100000, guid: f6dd640828095f24f8866dd6ade82e7a, type: 2}
+    second: {fileID: 2100000, guid: 8becac798be0c2c42b950756d1c63720, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -88,7 +87,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
