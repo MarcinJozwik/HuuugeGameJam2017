@@ -13,5 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyModel: {fileID: 0}
   MyMaterial: {fileID: 0}
-  Name: jarcybiskup
+  Name: Priest
   MyTexture: {fileID: 0}

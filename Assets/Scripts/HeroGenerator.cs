@@ -27,7 +27,9 @@ public class HeroGenerator : MonoBehaviour
             TargetParty.Heroes[i].Class.Name = heroClass.Name;
             TargetParty.Heroes[i].IsActive = true;
             if (heroClass.name == "Warrior")
+            {
                 GenerateHero(AllParts.WarriorParts, TargetParty.Heroes[i]);
+            }
             else if (heroClass.name == "Assasin")
             {
                 GenerateHero(AllParts.AssasinParts, TargetParty.Heroes[i]);
@@ -59,7 +61,7 @@ public class HeroGenerator : MonoBehaviour
         Item notClassic = (Item)Random.Range(0, 3);
 
         hero.Face.MyTexture = AllParts.Faces.GetRandomElement();
-
+        //hero.Class.Name = parts.Names.GetRandomElement();
 
         if (notClassic != Item.Torso)
         {
