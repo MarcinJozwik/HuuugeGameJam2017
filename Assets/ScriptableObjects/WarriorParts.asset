@@ -11,8 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60fa38fc4f267b4f8f38da1a6bce262, type: 3}
   m_Name: WarriorParts
   m_EditorClassIdentifier: 
-  Classes: []
   Heads: []
   Torsos: []
-  Arms: []
-  Legs: []
+  Faces: []

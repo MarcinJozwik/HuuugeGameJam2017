@@ -13,8 +13,7 @@ public class Hero : ScriptableObject, IComparable
     public MatchableObject Class;
     public MatchableObject Head;
     public MatchableObject Torso;
-    public MatchableObject Arms;
-    public MatchableObject Legs;
+    public MatchableObject Face;
 
     public IEnumerable<string> GetDescription()
     {
@@ -22,8 +21,7 @@ public class Hero : ScriptableObject, IComparable
         result.Add(Class.Description);
         result.Add(Head.Description);
         result.Add(Torso.Description);
-        result.Add(Arms.Description);
-        result.Add(Legs.Description);
+        result.Add(Face.Description);
 
         return result;
     }
@@ -38,9 +36,7 @@ public class Hero : ScriptableObject, IComparable
             result++;
         if (otherHero.Torso == Torso)
             result++;
-        if (otherHero.Arms == Arms)
-            result++;
-        if (otherHero.Legs == Legs)
+        if (otherHero.Face == Face)
             result++;
 
         return result;
@@ -52,8 +48,7 @@ public class Hero : ScriptableObject, IComparable
         Class = null;
         Head = null;
         Torso = null;
-        Arms = null;
-        Legs = null;
+        Face = null;
     }
 
 

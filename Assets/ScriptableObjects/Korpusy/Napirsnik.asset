@@ -9,6 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c85050955770c20448a74dbf672fa09b, type: 3}
-  m_Name: Warrior Head1
+  m_Name: Napirsnik
   m_EditorClassIdentifier: 
-  MyModel: {fileID: 0}
+  MyModel: {fileID: 4300000, guid: 2ba75fcc0bc42844289dae69035e6254, type: 3}
+  MyMaterial: {fileID: 2100000, guid: f6dd640828095f24f8866dd6ade82e7a, type: 2}
+  ClassName: 

@@ -7,8 +7,7 @@ public class HeroParts : ScriptableObject
 
     public List<MatchableObject> Heads;
     public List<MatchableObject> Torsos;
-    public List<MatchableObject> Arms;
-    public List<MatchableObject> Legs;
+    public List<MatchableObject> Faces;
 
 
 }
