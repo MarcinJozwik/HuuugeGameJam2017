@@ -24,7 +24,6 @@ public class Party : ScriptableObject, IComparable
 
     }
 
-
     public void Reset()
     {
         foreach (var hero in Heroes)

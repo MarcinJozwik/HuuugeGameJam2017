@@ -10,12 +10,20 @@ namespace Assets.Scripts
 {
     public class ScoreController : MonoBehaviour
     {
+        private int initialGold = 100;
+
+        private int totalScore = 0;
 
         private int goldPerPart = 20;
 
         [SerializeField]
         private Text goldCounter;
 
+        private void Start()
+        {
+            this.totalScore = this.initialGold;
+            this.goldCounter.text = "Your gold: " + totalScore;
+        }
 
         public void GenerateScore(int wellPlacedParts, int wrongPlacedParts)
         {
@@ -24,7 +32,20 @@ namespace Assets.Scripts
             int goodGoldEarned = wellPlacedParts * this.goldPerPart;
 
             int totalIncome = wrongGoldEarned + goodGoldEarned;
-            this.goldCounter.text = "Your gold: " + totalIncome;
+
+            this.totalScore += totalIncome;
+            this.goldCounter.text = "Your gold: " + totalScore;
+
+            if (this.totalScore <= 0)
+            {
+                GameController.Instance.CurrentGameState = GameController.GameState.GameOver;
+            }
+        }
+
+        public void ResetScore()
+        {
+            this.totalScore = this.initialGold;
+            this.goldCounter.text = "Your gold: " + totalScore;
         }
     }
 }

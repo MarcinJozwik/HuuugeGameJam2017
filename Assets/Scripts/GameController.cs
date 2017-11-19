@@ -18,6 +18,7 @@ public class GameController : Singleton<GameController> {
         Intro,
         CreatingParty,
         CheckingResult,
+        GameOver
     }
 
     private GameState currentGameState;
@@ -36,6 +37,7 @@ public class GameController : Singleton<GameController> {
             switch (currentGameState)
             {
                 case GameState.Intro:
+                    CreateBasicHero();
                     this.heroGenerator.GenerateParty(Random.Range(0, 4));
                     this.heroDescriptionText.text = "dupa";
                     this.CurrentGameState = GameState.CreatingParty;
@@ -43,6 +45,9 @@ public class GameController : Singleton<GameController> {
                 case GameState.CreatingParty:
                     break;
                 case GameState.CheckingResult:
+                    break;
+                case GameState.GameOver:
+                    this.scoreController.ResetScore();
                     break;
             }
         }
@@ -70,13 +75,13 @@ public class GameController : Singleton<GameController> {
     private int partsPerHero = 4;
 
     // Use this for initialization
-	void Start ()
-	{
-	    CurrentGameState = GameState.Intro;
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    void Start ()
+    {
+        CurrentGameState = GameState.Intro;
+    }
+    
+    // Update is called once per frame
+    void Update ()
     {
         switch (CurrentGameState)
         {
@@ -105,5 +110,10 @@ public class GameController : Singleton<GameController> {
                 this.CurrentGameState = GameState.Intro;
                 break;
         }
-	}
+    }
+
+    private void CreateBasicHero()
+    {
+        //throw new NotImplementedException();
+    }
 }
