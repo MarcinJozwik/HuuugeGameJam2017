@@ -14,4 +14,38 @@ public class AllParts : ScriptableObject {
     public HeroParts ArcherParts;
     public HeroParts MageParts;
 
+    public Model GetRandomTorsoModel()
+    {
+        Model model = new Model();
+
+        var list = new List<Mesh>();
+        list.AddRange(WarriorParts.Torsos);
+        list.AddRange(PriestParts.Torsos);
+        list.AddRange(AssasinParts.Torsos);
+        list.AddRange(ArcherParts.Torsos);
+        list.AddRange(MageParts.Torsos);
+
+        model.mesh = list.GetRandomElement();
+        model.material = Colors.GetRandomElement();
+
+        return model;
+    }
+
+    public Model GetRandomHeadModel()
+    {
+        Model model = new Model();
+
+        var list = new List<Mesh>();
+        list.AddRange(WarriorParts.Heads);
+        list.AddRange(PriestParts.Heads);
+        list.AddRange(AssasinParts.Heads);
+        list.AddRange(ArcherParts.Heads);
+        list.AddRange(MageParts.Heads);
+
+        model.mesh = list.GetRandomElement();
+        model.material = Colors.GetRandomElement();
+
+        return model;
+    }
+
 }

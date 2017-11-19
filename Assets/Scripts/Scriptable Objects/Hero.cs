@@ -20,9 +20,9 @@ public class Hero : ScriptableObject, IComparable
         var result = new List<string>();
         result.Add(Class.Name);
         if(Head.MyMaterial != null && Head.MyModel != null)
-            result.Add(Head.MyMaterial.name + " " + Head.MyModel.name);
+            result.Add(Head.MyMaterial.name + " " + Mesh2Word.GetName(Head.MyModel.name));
         if (Torso.MyMaterial != null && Torso.MyModel != null)
-            result.Add(Torso.MyMaterial.name + " " + Torso.MyModel.name);
+            result.Add(Torso.MyMaterial.name + " " + Mesh2Word.GetName(Torso.MyModel.name));
         if (Face.MyTexture != null)
             result.Add(Face.MyTexture.name);
 
@@ -52,6 +52,22 @@ public class Hero : ScriptableObject, IComparable
         Head = null;
         Torso = null;
         Face = null;
+    }
+
+    public Model GetHead()
+    {
+        Model result = new Model();
+        result.material = Head.MyMaterial;
+        result.mesh = Head.MyModel;
+        return result;
+    }
+
+    public Model GetTorso()
+    {
+        Model result = new Model();
+        result.material = Torso.MyMaterial;
+        result.mesh = Torso.MyModel;
+        return result;
     }
 
 
