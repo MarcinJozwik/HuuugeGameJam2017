@@ -17,6 +17,9 @@ public class DescriptionGenerator
     private readonly List<string> epithetNames;
     private readonly List<string> baseEpithetNames;
 
+    private readonly List<string> baseAddons;
+    private readonly List<string> addons;
+
     private string firstItem;
     private string secondItem;
 
@@ -25,6 +28,7 @@ public class DescriptionGenerator
         epithetNames = new List<string>();
         firstWearingVerbs = new List<string>();
         secondWearingVerbs = new List<string>();
+        addons = new List<string>();
         baseFirstWearingVerbs = new List<string>()
         {
             "odziany w",
@@ -59,6 +63,23 @@ public class DescriptionGenerator
             "juczny",
             "błogosławieny"
         };
+        baseAddons = new List<string>()
+        {
+            "z siekanicą",
+            "z tkanicą",
+            "ze sponką",
+            "ze spieniem",
+            "z zaniklem",
+            "ze sztrychami",
+            "z wędą",
+            "z wirzbcem",
+            "z listwicą",
+            "z hubą",
+            "z fryżkami",
+            "ze śliczkiem",
+            "z draczkiem",
+            "ze pągwicami",
+        };
     }
 
     public string GetDescription(Hero hero)
@@ -68,7 +89,7 @@ public class DescriptionGenerator
         ShuffleItemInDescription();
         firstItem = GetGenderizableString(firstItem);
         secondItem = GetGenderizableString(secondItem);
-        return String.Format("{5}{0} {6} {1} {2}.\n{3} {4}.", CamelString(GetRandomFromList(baseEpithetNames, epithetNames)), GetRandomFromList(baseFirstWearingVerbs, firstWearingVerbs), firstItem, GetRandomFromList(baseSecondWearingVerbs, secondWearingVerbs), secondItem, intro, heroParams[0]);
+        return String.Format("{5}{0} {6} {1} {2} {7}.\n{3} {4} {8}.", CamelString(GetRandomFromList(baseEpithetNames, epithetNames)), GetRandomFromList(baseFirstWearingVerbs, firstWearingVerbs), firstItem, GetRandomFromList(baseSecondWearingVerbs, secondWearingVerbs), secondItem, intro, heroParams[0], GetRandomFromList(baseAddons, addons), GetRandomFromList(baseAddons, addons));
     }    
 
     private string GetRandomFromList(List<string> baseList, List<string> currentList)
