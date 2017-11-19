@@ -13,5 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Heads:
   - {fileID: 4300000, guid: 13ee4731b33b8ab4998d4edad52685f1, type: 3}
+  - {fileID: 4300000, guid: 80ba03fbb6dcfa648af59361cd92f859, type: 3}
   Torsos:
   - {fileID: 4300000, guid: 2ba75fcc0bc42844289dae69035e6254, type: 3}
+  - {fileID: 4300000, guid: bd190a8be9cc478429375ce6cdcdb401, type: 3}

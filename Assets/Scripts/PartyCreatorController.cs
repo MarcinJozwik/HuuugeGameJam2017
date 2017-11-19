@@ -251,6 +251,11 @@ namespace Assets.Scripts
                         }
                     }
                     while (list.Count != 5);
+                    list.Shuffle();
+                    for (int i = 0; i < 5; i++)
+                    {
+                        Loaders[i].LoadModel(list[i], true);
+                    }
                     break;
                 case Stage.Torso:
                     targetModel = targetParty.Heroes[this.heroIndex].GetTorso();
@@ -265,14 +270,15 @@ namespace Assets.Scripts
                         }
                     }
                     while (list.Count != 5);
+                    list.Shuffle();
+                    for (int i = 0; i < 5; i++)
+                    {
+                        Loaders[i].LoadModel(list[i], false);
+                    }
                     break;
             }      
 
-                list.Shuffle();
-                for (int i = 0; i < 5; i++)
-                {
-                    Loaders[i].LoadModel(list[i]);
-                }
+
         }
 
         private bool IsModelTheSame(Model model1, Model model2)
