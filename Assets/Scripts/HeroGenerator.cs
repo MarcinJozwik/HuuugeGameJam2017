@@ -61,7 +61,7 @@ public class HeroGenerator : MonoBehaviour
         Item notClassic = (Item)Random.Range(0, 3);
 
         hero.Face.MyTexture = AllParts.Faces.GetRandomElement();
-        //hero.Class.Name = parts.Names.GetRandomElement();
+        hero.Class.Name = parts.Names.GetRandomElement();
 
         if (notClassic != Item.Torso)
         {

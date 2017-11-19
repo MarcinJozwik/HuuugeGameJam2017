@@ -35,9 +35,13 @@ public class Hero : ScriptableObject, IComparable
         int result = 0;
         if (otherHero.Class.Name == Class.Name)
             result++;
-        if (otherHero.Head.MyMaterial == Head.MyMaterial && otherHero.Head.MyModel == Head.MyModel)
+        if (otherHero.Head.MyMaterial == Head.MyMaterial)
             result++;
-        if (otherHero.Torso.MyModel == Torso.MyModel && otherHero.Torso.MyMaterial == Torso.MyMaterial)
+        if (otherHero.Head.MyModel == Head.MyModel)
+            result++;
+        if (otherHero.Torso.MyModel == Torso.MyModel)
+            result++;
+        if (otherHero.Torso.MyMaterial == Torso.MyMaterial)
             result++;
         if (otherHero.Face.MyTexture == Face.MyTexture)
             result++;
