@@ -13,14 +13,26 @@ public static class Mesh2Word
         {"Glowa_Dziula", "dziuła" },
         {"Glowa_Kokorhel", "kokorhel" },
         {"Glowa_Klobuk", "klobuk" },
-        {"Glowa_Nawaz", "nawaz" },
+        {"Glowa_Nawaz", "nawąz" },
         {"Glowa_Slojerz", "slojerz" },
         {"Glowa_Szarstuch", "szarstuch" },
+        {"Glowa_Kiczka", "kiczka"},
+        {"Glowa_Serpanek", "serpanek" },
+        {"Glowa_Szlapa", "szlapa" },
+        {"Glowa_Zatykadlnica", "zatykadlnica" },
+
+
+
         {"Korpus_Chechel", "czecheł" },
         {"Korpus_Kirys", "kirys" },
         {"Korpus_Napirsnik", "napirsnik" },
         {"Korpus_Rucho", "rucho" },
-        {"Korpus_Wapanrok", "wapanrok"}
+        {"Korpus_Wapanrok", "wapanrok"},
+        {"Korpus_Kabat", "kabat"},
+        {"Korpus_Kitel", "kitel" },
+        {"Korpus_Mrzeincz", "mrzeincz" },
+        {"Korpus_Rzyza", "rzyza" },
+        {"Korpus_Tancmantlik", "Tancmantlik" }
     };
 
     public static string GetName(string name)
