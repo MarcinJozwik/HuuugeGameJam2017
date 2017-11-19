@@ -9,11 +9,14 @@ public class TestingScript : MonoBehaviour
     private HeroGenerator generator;
     public Party TargetParty;
     public Party WorkingParty;
+    public int spawnedHeroes = 2;
+
+    int shownHero = 0;
 
     private void Start()
     {
         generator = GetComponent<HeroGenerator>();
-        generator.GenerateParty(3);
+        generator.GenerateParty(spawnedHeroes);
 
 
         foreach (var hero in TargetParty.Heroes)
@@ -33,6 +36,19 @@ public class TestingScript : MonoBehaviour
 
         loader.Load(TargetParty.Heroes[0]);
     }
+
+
+    private void Update()
+    {
+        if(Input.GetKeyUp(KeyCode.Space))
+        {
+            if (++shownHero == spawnedHeroes)
+                shownHero = 0;
+
+            loader.Load(TargetParty.Heroes[shownHero]);
+        }
+    }
+
 
 
 }
