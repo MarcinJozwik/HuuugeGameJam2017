@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(HeroGenerator))]
 public class TestingScript : MonoBehaviour
 {
-
+    public HeroDataLoader loader;
     private HeroGenerator generator;
     public Party TargetParty;
     public Party WorkingParty;
@@ -31,6 +31,7 @@ public class TestingScript : MonoBehaviour
         }
         //Debug.Log(WorkingParty.CompareTo(TargetParty));
 
+        loader.Load(TargetParty.Heroes[0]);
     }
 
 

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 1a68f01a0e9bc634890efe4fff7526a1
-timeCreated: 1511057603
+guid: 0f59830317196a641a4c04ddbadc8825
+timeCreated: 1511062958
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -9,13 +9,13 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Glowa_Nawaz
+    4300000: Glowa_Szarstuch
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: No Name
-    second: {fileID: 2100000, guid: 46d367ca9a6c65746b8497b86201b7ea, type: 2}
+    second: {fileID: 2100000, guid: b3e858b647207c3448a208bc25bd663a, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

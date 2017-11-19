@@ -60,23 +60,9 @@ public class HeroGenerator : MonoBehaviour
         hero.Face = Instantiate(basicObject);
         hero.Torso = Instantiate(basicObject);
         Item notClassic = (Item)Random.Range(0, 3);
-        
 
-        if(notClassic != Item.Face)
-        {
-            hero.Face.MyTexture = parts.Faces.GetRandomElement();
-        }
-        else
-        {
-            var list = new List<Texture2D>();
-            list.AddRange(AllParts.ArcherParts.Faces);
-            list.AddRange(AllParts.AssasinParts.Faces);
-            list.AddRange(AllParts.MageParts.Faces);
-            list.AddRange(AllParts.PriestParts.Faces);
-            list.AddRange(AllParts.WarriorParts.Faces);
+        hero.Face.MyTexture = AllParts.Faces.GetRandomElement();
 
-            hero.Face.MyTexture = list.GetRandomElement();
-        }
 
         if (notClassic != Item.Torso)
         {

@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60fa38fc4f267b4f8f38da1a6bce262, type: 3}
   m_Name: Archer Parts
   m_EditorClassIdentifier: 
-  Heads: []
+  Heads:
+  - {fileID: 4300000, guid: 13ee4731b33b8ab4998d4edad52685f1, type: 3}
   Torsos:
   - {fileID: 4300000, guid: 2ba75fcc0bc42844289dae69035e6254, type: 3}
-  Faces: []

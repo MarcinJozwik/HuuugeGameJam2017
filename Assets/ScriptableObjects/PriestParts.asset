@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60fa38fc4f267b4f8f38da1a6bce262, type: 3}
   m_Name: PriestParts
   m_EditorClassIdentifier: 
-  Heads: []
+  Heads:
+  - {fileID: 4300000, guid: 0f59830317196a641a4c04ddbadc8825, type: 3}
   Torsos:
   - {fileID: 4300000, guid: 03799cd50736d5644aa4ab006b1c4b31, type: 3}
-  Faces: []

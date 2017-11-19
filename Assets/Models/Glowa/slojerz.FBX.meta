@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 7c0208491702faa4e857970f42f0a790
-timeCreated: 1511059049
+guid: 13ee4731b33b8ab4998d4edad52685f1
+timeCreated: 1511062958
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -9,13 +9,13 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Glowa_Klobuk
+    4300000: Glowa_Slojerz
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: No Name
-    second: {fileID: 2100000, guid: ef1bc1f3288829b4da4949334c203667, type: 2}
+    second: {fileID: 2100000, guid: b3e858b647207c3448a208bc25bd663a, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
