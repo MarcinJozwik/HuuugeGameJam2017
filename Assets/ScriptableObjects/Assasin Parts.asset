@@ -16,3 +16,13 @@ MonoBehaviour:
   - {fileID: 4300000, guid: 0c0c0b1352b525046b2cbe6d3a71eb35, type: 3}
   Torsos:
   - {fileID: 4300000, guid: c48e8b5e610332140a4f1ebef0e0dc0a, type: 3}
+  Names:
+  - jadownik
+  - skrzynkarz
+  - "\u0142az\u0119ka"
+  - puszczacz
+  - "sku\u015Bca"
+  - szpiegacz
+  - "\u015Bpiegacz"
+  - "wygl\u0119dca"
+  - "wymie\u0144ca"
