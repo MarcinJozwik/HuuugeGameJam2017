@@ -93,7 +93,7 @@ public class GameController : Singleton<GameController>
 
     public AudioClip GoldSound;
 
-    private float partyTimer;
+    public float partyTimer;
 
     public readonly float createPartyTime = 100f;
 
