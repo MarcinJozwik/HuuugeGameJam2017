@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224351317129831962}
   - component: {fileID: 114637524462844526}
   - component: {fileID: 114707930441730330}
-  - component: {fileID: 114692095832309812}
+  - component: {fileID: 114576312713862718}
   m_Layer: 5
   m_Name: GameManager
   m_TagString: Untagged
@@ -29,6 +29,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114576312713862718
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1965854842572248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b2acd0fffdeee48acdcd78d19b6472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldCounter: {fileID: 0}
 --- !u!114 &114637524462844526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -45,19 +57,8 @@ MonoBehaviour:
   heroDescriptionText: {fileID: 0}
   targetParty: {fileID: 11400000, guid: 6afc069c067a7b7478ef59e3f441ee26, type: 2}
   workingParty: {fileID: 11400000, guid: b9da2746c1a81b243835db2f053239c2, type: 2}
---- !u!114 &114692095832309812
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1965854842572248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6850dc56a19837d42a0855aeefc921c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetParty: {fileID: 11400000, guid: 6afc069c067a7b7478ef59e3f441ee26, type: 2}
-  workingParty: {fileID: 11400000, guid: b9da2746c1a81b243835db2f053239c2, type: 2}
+  scoreController: {fileID: 114576312713862718}
+  partyCreatorController: {fileID: 0}
 --- !u!114 &114707930441730330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69,7 +70,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b42471d7fe4ed04791ed1b3aa0c3252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Parts: {fileID: 11400000, guid: 2fe7f2237f4c3b946ab4b4e331e4e461, type: 2}
+  basicObject: {fileID: 11400000, guid: e943b050d255df943b4a523e6e5cc9f0, type: 2}
+  AllParts: {fileID: 11400000, guid: 2fe7f2237f4c3b946ab4b4e331e4e461, type: 2}
   TargetParty: {fileID: 11400000, guid: 6afc069c067a7b7478ef59e3f441ee26, type: 2}
 --- !u!224 &224351317129831962
 RectTransform:
@@ -78,7 +80,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1965854842572248}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalPosition: {x: 959.98, y: 540, z: 0}
   m_LocalScale: {x: 1.3333334, y: 1.3333334, z: 1.3333334}
   m_Children: []
   m_Father: {fileID: 0}
@@ -86,6 +88,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 960, y: 540}
+  m_AnchoredPosition: {x: 959.98, y: 540}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}

@@ -37,9 +37,18 @@ public class GameController : Singleton<GameController> {
             switch (currentGameState)
             {
                 case GameState.Intro:
-                    CreateBasicHero();
-                    this.heroGenerator.GenerateParty(Random.Range(0, 4));
-                    this.heroDescriptionText.text = "dupa";
+                    this.workingParty.Reset();
+                    this.targetParty.Reset();
+                    for (int i = 0; i < this.workingParty.Heroes.Count; i++)
+                    {
+                        Hero hero = this.workingParty.Heroes[i];
+                        hero.Head = ScriptableObject.Instantiate<MatchableObject>(basicObject);
+                        hero.Face = ScriptableObject.Instantiate<MatchableObject>(basicObject);
+                        hero.Torso = ScriptableObject.Instantiate<MatchableObject>(basicObject);
+                    }
+                    this.heroGenerator.GenerateParty(Random.Range(1, 5));
+                    this.partyCreatorController.ResetHeroes();
+                    this.partyCreatorController.PrepareHeroes();
                     this.CurrentGameState = GameState.CreatingParty;
                     break;
                 case GameState.CreatingParty:
@@ -56,18 +65,27 @@ public class GameController : Singleton<GameController> {
     [SerializeField]
     private HeroGenerator heroGenerator;
 
+
     [SerializeField]
-    private Text heroDescriptionText;
+    private Party targetParty;
 
     [SerializeField]
     private Party workingParty;
 
     [SerializeField]
+    private MatchableObject basicObject;
+
+    [SerializeField]
     private ScoreController scoreController;
+
+    [SerializeField]
+    private PartyCreatorController partyCreatorController;
+
+    
 
     private float partyTimer = 0f;
 
-    private float createPartyTime = 10f;
+    private float createPartyTime = 100f;
 
     private int partsPerHero = 4;
 
@@ -103,14 +121,10 @@ public class GameController : Singleton<GameController> {
                 int wellPlacedParts = this.heroGenerator.TargetParty.CompareTo(this.workingParty);
                 int numberOfTotalParts = heroesInParty * partsPerHero;
                 int wrongPartsNumber = numberOfTotalParts - wellPlacedParts;
+                Debug.Log("Good choices: " + wellPlacedParts + ",Bad choices: " + wrongPartsNumber);
                 this.scoreController.GenerateScore(wellPlacedParts, wrongPartsNumber);
                 this.CurrentGameState = GameState.Intro;
                 break;
         }
-    }
-
-    private void CreateBasicHero()
-    {
-        //throw new NotImplementedException();
     }
 }

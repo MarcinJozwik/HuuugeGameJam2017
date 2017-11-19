@@ -62,12 +62,11 @@ public class TestingScript : MonoBehaviour
         do
         {
             var model = allParts.GetRandomTorsoModel();
-            if (ContainsModel(list, model))
+            if (!ContainsModel(list, model))
             {
-                continue;
-            }
-            else
+
                 list.Add(model);
+            }
         }
         while (list.Count != 5);
 

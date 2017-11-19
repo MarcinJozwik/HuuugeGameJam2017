@@ -4,7 +4,7 @@ public class LoadToRender : MonoBehaviour {
 
     private Material starting_mat = null;
     private Mesh starting_mesh = null;
-    private Model currentModel;
+    public Model currentModel;
 
     public MeshFilter filter;
     public MeshRenderer obj_renderer;

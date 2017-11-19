@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: fefd639730f769c4db537b384adfcebe
+timeCreated: 1511085507
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Kingthings Petrock
+  fontNames:
+  - Kingthings Petrock
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
