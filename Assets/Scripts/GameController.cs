@@ -88,6 +88,10 @@ public class GameController : Singleton<GameController>
     [SerializeField]
     private PartyCreatorController partyCreatorController;
 
+    public AudioSource AudioSource;
+
+    public AudioClip GoldSound;
+
     private float partyTimer;
 
     private readonly float createPartyTime = 100f;
@@ -128,6 +132,11 @@ public class GameController : Singleton<GameController>
                 int wrongPartsNumber = numberOfTotalParts - wellPlacedParts;
                 Debug.Log("Good choices: " + wellPlacedParts + ",Bad choices: " + wrongPartsNumber);
                 this.scoreController.GenerateScore(wellPlacedParts, wrongPartsNumber);
+
+                if (wellPlacedParts > wrongPartsNumber)
+                {
+                    this.AudioSource.PlayOneShot(this.GoldSound);
+                }
                 if (this.CurrentGameState != GameState.GameOver)
                 {
                     this.CurrentGameState = GameState.Intro;
