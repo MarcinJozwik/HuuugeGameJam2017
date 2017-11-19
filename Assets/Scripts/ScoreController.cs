@@ -14,7 +14,7 @@ namespace Assets.Scripts
 
         private int totalScore = 0;
 
-        private int goldPerPart = 20;
+        private int goldPerPart = 5;
 
         [SerializeField]
         private Text goldCounter;

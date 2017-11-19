@@ -15,6 +15,7 @@ public class GameController : Singleton<GameController> {
 
     public enum GameState
     {
+        InStartScreen,
         Intro,
         CreatingParty,
         CheckingResult,
@@ -37,6 +38,7 @@ public class GameController : Singleton<GameController> {
             switch (currentGameState)
             {
                 case GameState.Intro:
+                    this.GameCanvas.SetActive(true);
                     this.workingParty.Reset();
                     this.targetParty.Reset();
                     this.heroGenerator.GenerateParty(Random.Range(1, 5));
@@ -49,6 +51,8 @@ public class GameController : Singleton<GameController> {
                 case GameState.CheckingResult:
                     break;
                 case GameState.GameOver:
+                    this.GameCanvas.SetActive(false);
+                    this.RestartCanvas.SetActive(true);
                     this.scoreController.ResetScore();
                     break;
             }
@@ -74,7 +78,9 @@ public class GameController : Singleton<GameController> {
     [SerializeField]
     private PartyCreatorController partyCreatorController;
 
-    
+    public GameObject RestartCanvas;
+    public GameObject GameCanvas;
+
 
     private float partyTimer = 0f;
 
@@ -85,7 +91,7 @@ public class GameController : Singleton<GameController> {
     // Use this for initialization
     void Start ()
     {
-        CurrentGameState = GameState.Intro;
+        CurrentGameState = GameState.InStartScreen;
     }
     
     // Update is called once per frame
