@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEditor;
 
 [CreateAssetMenu(fileName = "Zmien to kurwa", menuName = "Hero Maker/Body Part")]
 public class MatchableObject : ScriptableObject
