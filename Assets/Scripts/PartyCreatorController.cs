@@ -21,6 +21,15 @@ namespace Assets.Scripts
         private List<HeroModel> heroes = new List<HeroModel>();
 
         [SerializeField]
+        private List<MeshRenderer> pedestalMats = new List<MeshRenderer>();
+
+        [SerializeField]
+        private Material pedestalActive;
+
+        [SerializeField]
+        private Material pedestalInactive;
+
+        [SerializeField]
         private Party workingParty;
 
         [SerializeField]
@@ -71,6 +80,7 @@ namespace Assets.Scripts
         private void Awake()
         {
             this.descriptionGenerator = new DescriptionGenerator();
+            this.pedestalMats[this.heroIndex].material = this.pedestalActive;
         }
 
         public void Update()
@@ -167,13 +177,16 @@ namespace Assets.Scripts
                     if (this.heroIndex < this.heroes.FindAll(model => model.ParentGameObject.active).Count - 1)
                     {
                         Party targetParty = this.heroGenerator.TargetParty;
+                        this.pedestalMats[this.heroIndex].material = this.pedestalInactive;
                         this.heroIndex++;
+                        this.pedestalMats[this.heroIndex].material = this.pedestalActive;
                         CurrentStage = Stage.Head;
                         this.heroDescriptionText.text = this.descriptionGenerator.GetDescription(targetParty.Heroes[this.heroIndex]);
                     }
                     else
                     {
                         GameController.Instance.CurrentGameState = GameController.GameState.CheckingResult;
+                        this.pedestalMats[this.heroIndex].material = this.pedestalInactive;
                         this.heroIndex = 0;
                     }
 
