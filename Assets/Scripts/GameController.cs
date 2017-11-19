@@ -54,6 +54,7 @@ public class GameController : Singleton<GameController>
                 case GameState.CreatingParty:
                     break;
                 case GameState.CheckingResult:
+                    this.partyTimer = 0.0f;
                     break;
                 case GameState.GameOver:
                     this.GameCanvas.SetActive(false);
@@ -94,7 +95,7 @@ public class GameController : Singleton<GameController>
 
     private float partyTimer;
 
-    private readonly float createPartyTime = 100f;
+    public readonly float createPartyTime = 100f;
 
     private readonly int partsPerHero = 4;
 
