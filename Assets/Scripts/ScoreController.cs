@@ -22,7 +22,7 @@ namespace Assets.Scripts
         private void Start()
         {
             this.totalScore = this.initialGold;
-            this.goldCounter.text = "Your gold: " + totalScore;
+            this.goldCounter.text = "Twe dukaty: " + totalScore;
         }
 
         public void GenerateScore(int wellPlacedParts, int wrongPlacedParts)
@@ -34,7 +34,7 @@ namespace Assets.Scripts
             int totalIncome = wrongGoldEarned + goodGoldEarned;
 
             this.totalScore += totalIncome;
-            this.goldCounter.text = "Your gold: " + totalScore;
+            this.goldCounter.text = "Twe dukaty: " + totalScore;
 
             if (this.totalScore <= 0)
             {
@@ -45,7 +45,7 @@ namespace Assets.Scripts
         public void ResetScore()
         {
             this.totalScore = this.initialGold;
-            this.goldCounter.text = "Your gold: " + totalScore;
+            this.goldCounter.text = "Twe dukaty: " + totalScore;
         }
     }
 }

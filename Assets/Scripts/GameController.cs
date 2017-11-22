@@ -95,7 +95,7 @@ public class GameController : Singleton<GameController>
 
     public float partyTimer;
 
-    public readonly float createPartyTime = 60f;
+    //public readonly float createPartyTime = 60f;
 
     private readonly int partsPerHero = 4;
 
@@ -114,15 +114,15 @@ public class GameController : Singleton<GameController>
                 break;
             case GameState.CreatingParty:
 
-                if (this.partyTimer >= this.createPartyTime)
-                {
-                    this.CurrentGameState = GameState.CheckingResult;
-                    this.partyTimer = 0f;
-                }
-                else
-                {
-                    this.partyTimer += Time.deltaTime;
-                }
+                //if (this.partyTimer >= this.createPartyTime)
+                //{
+                //    this.CurrentGameState = GameState.CheckingResult;
+                //    this.partyTimer = 0f;
+                //}
+                //else
+                //{
+                //    this.partyTimer += Time.deltaTime;
+                //}
 
                 break;
             case GameState.CheckingResult:
